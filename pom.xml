@@ -10,14 +10,14 @@
 	<description>Airports Application Case Study</description>
 	<inceptionYear>2021</inceptionYear>
 	<properties>
-		<!-- <sonar.projectKey>airportstestcases</sonar.projectKey>
-		<sonar.organization>nileshdevdas-github</sonar.organization>   -->
+		<sonar.projectKey>Asadtestcases</sonar.projectKey>
+		<sonar.organization>mdasad927</sonar.organization>   
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<!-- <sonar.coverage.jacoco.xmlReportPaths>../testcases/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>  -->
+		 <sonar.coverage.jacoco.xmlReportPaths>../testcases/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>  
 	</properties>
 	<scm>
 		<tag>dev</tag>
-		<url>https://bitbucket.org/nileshdevdas/tcs1</url>
+		<url>https://github.com/mdasad927/SapientDemo.git</url>
 	</scm>
 	<contributors>
 		<contributor>
@@ -28,8 +28,8 @@
 	<developers>
 		<developer>
 			<id>d1</id>
-			<name>nilesh</name>
-			<email>nilesh.devdas@vinsys.com</email>
+			<name>Asad</name>
+			<email>mdasad927@gmail.com</email>
 		</developer>
 	</developers>
 	<dependencies>
