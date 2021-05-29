@@ -176,20 +176,21 @@ public class AirportTest {
 	        assertEquals(expected, manager.signup());
 	    }
 
-	    public void testHelp(){
+	    @Test
+	    public void testHelps(){
 	    	AirportManager manager = new AirportManager(service);
 	        boolean expected =true;
 	        Mockito.when(service.help()).thenReturn(true);
 	        assertEquals(expected, manager.help());
 	    }
-
+	    @Test
 	    public void listAirportsSorted(){
 	    	AirportManager manager = new AirportManager(service);
 	    	List<Integer> expected =new ArrayList<>();
 	        Mockito.when(service.listAirportsSorted()).thenReturn(expected);
 	        assertEquals(expected, manager.listAirportsSorted());
 	    }
-
+	    @Test
 	    public void listAirportsPaginated(){
 	    	AirportManager manager = new AirportManager(service);
 	        boolean expected =true;
