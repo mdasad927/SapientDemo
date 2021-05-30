@@ -171,11 +171,11 @@ public boolean help() {
 	
 }
    
-public List<Integer> listAirportsSorted() {
+public List<Airport> listAirportsSorted() {
 	return this.service.listAirportsSorted();
 }
      
-public boolean listAirportsPaginated() {
+public List listAirportsPaginated() {
 	return this.service.listAirportsPaginated();
 }
 }

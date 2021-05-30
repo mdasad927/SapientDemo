@@ -1,16 +1,17 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import Airport.Airport;
 import Airport.AirportManager;
 import Airport.IAirportService;
 
@@ -186,16 +187,34 @@ public class AirportTest {
 	    @Test
 	    public void listAirportsSorted(){
 	    	AirportManager manager = new AirportManager(service);
-	    	List<Integer> expected =new ArrayList<>();
+	    	Airport airport=new Airport();
+	    	airport.setId(2);
+	    	airport.setIdent("01AA");
+	    	Airport airport1=new Airport();
+	    	airport.setId(3);
+	    	airport.setIdent("01BB");
+	    	List<Airport> expected =new ArrayList<>();
+	    	expected.add(airport);
+	    	expected.add(airport1);
 	        Mockito.when(service.listAirportsSorted()).thenReturn(expected);
 	        assertEquals(expected, manager.listAirportsSorted());
 	    }
 	    @Test
 	    public void listAirportsPaginated(){
 	    	AirportManager manager = new AirportManager(service);
-	        boolean expected =true;
-	        Mockito.when(service.listAirportsPaginated()).thenReturn(true);
-	        assertEquals(expected, manager.listAirportsPaginated());
+	    	Airport airport=new Airport();
+	    	airport.setId(2);
+	    	airport.setIdent("01AA");
+	    	Airport airport1=new Airport();
+	    	airport.setId(3);
+	    	airport.setIdent("01BB");
+	    	List<Airport> input =new ArrayList<>();
+	    	input.add(airport);
+	    	input.add(airport1);
+	    	input=input.stream().limit(1).collect(Collectors.toList());
+	    	int expected=1;
+	        Mockito.when(service.listAirportsPaginated()).thenReturn(input);
+	        assertEquals(expected, manager.listAirportsPaginated().size());
 	    }
 
 

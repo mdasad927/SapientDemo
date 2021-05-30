@@ -40,9 +40,9 @@ public interface IAirportService {
 	 
 	 public boolean help();
 	    
-	 public List<Integer> listAirportsSorted();
+	 public List<Airport> listAirportsSorted();
 	      
-	 public boolean listAirportsPaginated();
+	 public List listAirportsPaginated();
 	 
 	 
 }

@@ -1,5 +1,7 @@
 package Airport;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -10,6 +12,8 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.opencsv.bean.CsvToBeanBuilder;
 
 import helpers.AirportContinent;
 import helpers.AirportCountry;
@@ -131,8 +135,22 @@ public class AirportServiceImpl implements IAirportService {
 
 	@Override
 	public int listAllContinent() {
-	
-		return 0;
+		 String fileName = "D:\\Learning\\Airport Data\\regions.csv";
+
+	        List<Region> beans=null;
+			try {
+				beans = new CsvToBeanBuilder(new FileReader(fileName))
+				        .withType(Region.class)
+				        .build()
+				        .parse();
+			} catch (IllegalStateException e) {
+				logger.error(e.getMessage());
+			} catch (FileNotFoundException e) {
+				logger.error(e.getMessage());
+			}
+	      
+	return (int)beans.stream().map(i->i.getContinent()).distinct().count();
+		
 	}
 
 
@@ -172,24 +190,33 @@ public class AirportServiceImpl implements IAirportService {
 
 
 	@Override
-	public List<Integer> listAirportsSorted() {
-		/*
-		 * List<Integer> result; try { result =
-		 * (int)Files.readString(Paths.get("D:\\Learning\\Airport Data\\airports.csv")).
-		 * lines().mapToInt(null).sorted().collect(Collectors.toList()); } catch
-		 * (IOException e) { result=0; logger.error(e.getMessage()); }
-		 *  
-		 * 
-		 */
-		return new ArrayList();
+	public List<Airport> listAirportsSorted() {
+		 String fileName = "D:\\Learning\\Airport Data\\airports.csv";
+
+	        List<Airport> beans=null;
+			try {
+				beans = new CsvToBeanBuilder(new FileReader(fileName))
+				        .withType(Airport.class)
+				        .build()
+				        .parse();
+			} catch (IllegalStateException e) {
+				logger.error(e.getMessage());
+			} catch (FileNotFoundException e) {
+				logger.error(e.getMessage());
+			}
+	      
+	beans= beans.stream().sorted((Airport o1, Airport o2) -> o1.getId()-o2.getId()
+        ).collect(Collectors.toList());
+	
+		return beans;
 				 
 	}
 
 
 	@Override
-	public boolean listAirportsPaginated() {
+	public List listAirportsPaginated() {
 		// TODO Auto-generated method stub
-		return true;
+		return new  ArrayList();
 	}
 
 
