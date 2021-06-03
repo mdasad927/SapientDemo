@@ -162,9 +162,9 @@ public class AirportServiceImpl implements IAirportService {
 
 
 	@Override
-	public int getRandomAirport() {
+	public String getRandomAirport() {
 		// TODO Auto-generated method stub
-		return 0;
+		return "";
 	}
 
 

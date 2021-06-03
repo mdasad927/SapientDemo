@@ -10,7 +10,7 @@
 	<description>Airports Application Case Study</description>
 	<inceptionYear>2021</inceptionYear>
 	<properties>
-		<sonar.projectKey>Asadtestcases</sonar.projectKey>
+		<sonar.projectKey>mdasad927_SapientDemo</sonar.projectKey>
 		<sonar.organization>mdasad927</sonar.organization>   
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		 <sonar.coverage.jacoco.xmlReportPaths>../testcases/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>  
@@ -33,6 +33,17 @@
 		</developer>
 	</developers>
 	<dependencies>
+	<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.30</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -43,6 +54,11 @@
 			<artifactId>mockito-all</artifactId>
 			<version>1.10.19</version>
 		</dependency>
+		<dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>5.3</version>
+  </dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
@@ -104,6 +120,7 @@
 					<release>11</release>
 				</configuration>
 			</plugin>
+		
 		</plugins>
 	</build>
 </project>

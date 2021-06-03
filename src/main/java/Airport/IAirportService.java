@@ -32,7 +32,7 @@ public interface IAirportService {
 	 
 	 public int listAll();
 	 
-	 public int getRandomAirport();
+	 public String getRandomAirport();
 	 
 	 public boolean login();
 	 
